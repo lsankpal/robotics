@@ -1,4 +1,4 @@
-function Tr = transformation_matrix(ns,Theta,alpha,d,a)
+function Tr = transformation_mat(ns,Theta,alpha,d,a)
 
 for i=1:ns
 

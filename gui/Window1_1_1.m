@@ -104,7 +104,7 @@ alpha=str2num(cell2mat(alpha))
 a=tabledata(:,4);
 a=str2num(cell2mat(a))
 Td=cell2table(tabledata)
- writetable(Td,'D:\MS RAS EE\Fall 2019\Mae 547 Modelling of robots\project\D_H_user.txt');
+ %writetable(Td,'D:\MS RAS EE\Fall 2019\Mae 547 Modelling of robots\project\D_H_user.txt');
  
 
 
