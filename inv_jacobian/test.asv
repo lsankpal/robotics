@@ -1,0 +1,8 @@
+n_links=3;
+link_type=['R' 'R' 'P']
+qd=[0 0 0.5];
+q0=[pi pi/2 pi/3];
+link_limits=[[
+
+
+x=calculate_inverse_kinematics_jacobian(DH_params,n_links,link_type,link_limits,qd,q0)
