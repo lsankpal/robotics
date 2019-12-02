@@ -2,7 +2,7 @@ function qcomp= calculate_inverse_kinematics_jacobian(DH_params,n_links,link_typ
 
 for i= 1:n_links
     links(i)=Link('d',DH_params(i,2),'a',DH_params(i,3),'alpha',DH_params(i,4));
-    if link_type(i)== 'P'
+    if link_type(i)== 'Prismatic'
         links(i).qlim = [0,link_limits(i)];
     end
 end
