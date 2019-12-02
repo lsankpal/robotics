@@ -79,10 +79,6 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 tabledata=(get(handles.uitable1,'data'));
-Td=getappdata(Window1_1_1,'Td',Td)
-ns=getappdata(Window1_1,'ns');
-joint_type=getappdata(newWindow2_1,'joint type',joint_type);
-link_limits=getappdata(newWindow2_1,'link limits',link_limits);
 q0=tabledata(:,1);
 qd=tabledata(:,2);
 x=calculate_inverse_kinematics_jacobian(Td,ns,joint_type,link_limits,qd,q0);

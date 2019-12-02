@@ -59,6 +59,7 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
+global ns;
 
 
 

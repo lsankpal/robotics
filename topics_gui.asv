@@ -46,15 +46,6 @@ end
 
 % --- Executes just before topics_gui is made visible.
 function topics_gui_OpeningFcn(hObject, eventdata, handles, varargin)
-n_s=getappdata(0,'ns')
-theta=getappdata(Window1_1_1,'theta')
-d=getappdata(Window1_1_1,'d')
-alpha=getappdata(Window1_1_1,'alpha')
-a=getappdata(Window1_1_1,'a')
-Td=getappdata(Window1_1_1,'Td')
-%T_d=(cell2mat(Td))
-Joint_angle=getappdata(newWindow2_1,'joint_type');
-link_limits=getappdata(newWindow2_1,'link_limits');
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -87,8 +78,12 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-Tr=transformation_matrix(n_s,theta,alpha,d,a)
+ns=getappdata(Window1_1,'ns');
+theta=getappdata(Window1_1,'theta');
+d=getappdata(Window1_1,'d');
+alpha=getappdata(Window1_1,'alpha');
+a=getappdata(Window1_1,'a');
+transformation_matrix(ns,theta,alpha,d,a)
 
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)

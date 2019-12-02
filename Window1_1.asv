@@ -100,17 +100,17 @@ end
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
 n1=get(handles.edit1,'String');
-n2=get(handles.edit1,'String');
-global ns;
-ns=str2double(n1)
+
+ns=str2double(n1);
+n_s=str2double(n1);
 
 
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-setappdata(0,'ns',ns);
-
+setappdata(Window1_1,'ns',ns);
+setappdata(Window1_1,'n_s',ns);
 Window1_1_1
 close Window1_1
 

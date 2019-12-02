@@ -60,7 +60,8 @@ handles.output = hObject;
 guidata(hObject, handles);
 % set the table size to be 2x2
 
-ns=getappdata(Window1_1,'ns');
+ns=getappdata(0,'ns');
+
 
 set(handles.uitable2,'Data',cell(ns,4));
 set(handles.uitable2, 'ColumnEditable', [true, true, true, true]);
@@ -94,20 +95,24 @@ global Td;
 % handles    structure with handles and user data (see GUIDATA)
 tabledata=(get(handles.uitable2,'data'));
 
-
 theta=tabledata(:,1);
-theta=str2double(cell2mat(theta))
+theta=str2num(cell2mat(theta))
 d=tabledata(:,2);
-d=str2double(cell2mat(d))
+d=str2num(cell2mat(d))
 alpha=tabledata(:,3);
-alpha=str2double(cell2mat(alpha))
+alpha=str2num(cell2mat(alpha))
 a=tabledata(:,4);
-a=str2double(cell2mat(a))
+a=str2num(cell2mat(a))
 Td=(table2array(cell2table(tabledata)))
  %writetable(Td,'D:\MS RAS EE\Fall 2019\Mae 547 Modelling of robots\project\D_H_user.txt');
  setappdata(Window1_1_1,'Td',Td);
- window2
+ setappdata(Window1_1_1,'theta',theta);
+ setappdata(Window1_1_1,'alpha',alpha);
+ setappdata(Window1_1_1,'d',d);
+ setappdata(Window1_1_1,'a',a);
+ topics_gui
  close Window1_1_1
+ close Window1_1
  
 
 
