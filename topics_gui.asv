@@ -46,19 +46,18 @@ end
 
 % --- Executes just before topics_gui is made visible.
 function topics_gui_OpeningFcn(hObject, eventdata, handles, varargin)
-ns=getappdata(0,'ns');
-value1 = getappdata(handles.pushbutton1, 'a')
-value2 = getappdata(handles.pushbutton2, 'b')
-if (value1==1)
+ns=getappdata(0,'ns')
+global var
+%var = getappdata(Window_1,'var')
+if handles.b1==1
     ns=getappdata(0,'ns')
     theta=getappdata(Window1_1_1,'theta')
     d=getappdata(Window1_1_1,'d')
     alpha=getappdata(Window1_1_1,'alpha')
     a=getappdata(Window1_1_1,'a')
     TD=getappdata(Window1_1_1,'Td')
-else if (value2==2)
+else 
     TD=getappdata(newWindow2_1,'Td')
-    end
 end
 %T_d=(cell2mat(Td))
 Joint_angle=getappdata(newWindow2_1,'joint_type');

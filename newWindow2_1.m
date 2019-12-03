@@ -119,8 +119,8 @@ link_length=cell2mat(link_length)
 setappdata(newWindow2_1,'joint_type',joint_type);
 %setappdata(newWindow2_1,'link_limits',Link_limits);
  
-T_d=calculate_dhparam(ns,Z_angle,link_length, joint_type)
-
+Td=calculate_dhparam(ns,Z_angle,link_length, joint_type)
+setappdata(newWindow2_1,'Td',Td);
 topics_gui
 
 

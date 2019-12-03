@@ -98,18 +98,18 @@ tabledata=(get(handles.uitable2,'data'));
 theta=tabledata(:,1);
 theta=str2num(cell2mat(theta))
 d=tabledata(:,2);
-d=str2num(cell2mat(d))
+d1=str2num(cell2mat(d))
 alpha=tabledata(:,3);
 alpha=str2num(cell2mat(alpha))
 a=tabledata(:,4);
-a=str2num(cell2mat(a))
-Td=(table2array(cell2table(tabledata)))
+a1=str2num(cell2mat(a))
+Td=str2double(tabledata)
  %writetable(Td,'D:\MS RAS EE\Fall 2019\Mae 547 Modelling of robots\project\D_H_user.txt');
  setappdata(Window1_1_1,'Td',Td);
  setappdata(Window1_1_1,'theta',theta);
  setappdata(Window1_1_1,'alpha',alpha);
- setappdata(Window1_1_1,'d',d);
- setappdata(Window1_1_1,'a',a);
+ setappdata(Window1_1_1,'d',d1);
+ setappdata(Window1_1_1,'a',a1);
  topics_gui
  close Window1_1_1
 
