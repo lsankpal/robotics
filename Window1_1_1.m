@@ -112,7 +112,7 @@ Td=(table2array(cell2table(tabledata)))
  setappdata(Window1_1_1,'a',a);
  topics_gui
  close Window1_1_1
- close Window1_1
+
  
 
 

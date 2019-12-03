@@ -46,7 +46,7 @@ end
 
 % --- Executes just before topics_gui is made visible.
 function topics_gui_OpeningFcn(hObject, eventdata, handles, varargin)
-n_s=getappdata(0,'ns')
+ns=getappdata(0,'ns')
 theta=getappdata(Window1_1_1,'theta')
 d=getappdata(Window1_1_1,'d')
 alpha=getappdata(Window1_1_1,'alpha')
@@ -88,7 +88,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-Tr=transformation_matrix(n_s,theta,alpha,d,a)
+Tr=transformation_matrix(ns,theta,alpha,d,a)
 
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
