@@ -27,7 +27,7 @@ for i=1:ns
     T(3,4) = d(i);
     T(4,4)=0;
 
-    disp('h')
+
 
 end
 

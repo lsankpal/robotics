@@ -60,8 +60,8 @@ handles.output = hObject;
 guidata(hObject, handles);
 % set the table size to be 2x2
 
-ns=getappdata(0,'ns');
 
+global ns;
 
 set(handles.uitable2,'Data',cell(ns,4));
 set(handles.uitable2, 'ColumnEditable', [true, true, true, true]);

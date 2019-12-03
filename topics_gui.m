@@ -95,13 +95,28 @@ Tr=transformation_matrix(ns,theta,alpha,d,a)
 
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
+global Td
+global ns;
+Td
+theta=Td(:,1)
+d=Td(:,2)
+alpha=Td(:,3)
+a=Td(:,4)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+Eul=euler_angles(ns, theta, alpha, d, a)
 
 
 % --- Executes on button press in pushbutton3.
 function pushbutton3_Callback(hObject, eventdata, handles)
+global Td;
+global ns;
+theta=Td(:,1);
+d=Td(:,2);
+alpha=Td(:,3);
+a=Td(:,4);
+Tr=transformation_matrix(ns,theta,alpha,d,a)
 % hObject    handle to pushbutton3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
