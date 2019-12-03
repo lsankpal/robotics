@@ -1,14 +1,19 @@
-function qstring = calculate_inverse_differential_kinematics(Jacobian,V,U,n_links)
+function [qcomp,tcomp] = calculate_inverse_differential_kinematics(DH_params,q0,qd,n_links)
 
-Jacobian(:,n_links) = U;
-q = pinv(Jacobian)*V;
-[m,n] = size(U);
-for j=1:n_links
-    if(Jacobian(m-1,j)==0)&&(Jacobian(m-2,j)==0)&&(Jacobian(m-3,j)==0)
-        qstring(j) = sprintf('D_dot %d = %0.2f \n',j,q(j));
+for i=1:n_links
+    if link_type(i)=='PRISMATIC'
+        links(i) = Prismatic('theta',DH_params(i,1),'d',DH_params(i,2),'a',DH_params(i,3),'alpha',DH_params(i,4));
+        links(i).qlim = [0,link_limits(i)];
     else
-        qstring(j) = sprintf('Theta_dot %d = %0.2f \n',j,q(j));
+        links(i) = Revolute('d',DH_params(i,2),'a',DH_params(i,3),'alpha',DH_params(i,4));
     end
+end
+
+R=SerialLink(links);
+Td = R.fkine(qd);
+mask = [1 1 1 0 0 0]';
+qcomp = R.ikine(Td,q0,mask,'pinv');
+tcomp = R.fkine(qcomp);
 end
 
     

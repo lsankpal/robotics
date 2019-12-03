@@ -2,10 +2,10 @@ function qcomp = calculate_differential_kinematics(DH_params,n_links,link_type,l
 
 for i=1:n_links
     if link_type(i)=='PRISMATIC'
-        links(i) = Link('prismatic','theta',DH_params(i,1),'d',DH_params(i,2),'a',DH_params(i,3),'alpha',DH_params(i,4));
+        links(i) = Prismatic('theta',DH_params(i,1),'d',DH_params(i,2),'a',DH_params(i,3),'alpha',DH_params(i,4));
         links(i).qlim = [0,link_limits(i)];
     else
-        links(i) = Link('revolute','theta',DH_params(i,1),'d',DH_params(i,2),'a',DH_params(i,3),'alpha',DH_params(i,4),'prismatic');
+        links(i) = Revolute('d',DH_params(i,2),'a',DH_params(i,3),'alpha',DH_params(i,4));
     end
 end
 
