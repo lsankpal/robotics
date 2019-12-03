@@ -46,6 +46,7 @@ end
 
 % --- Executes just before Window1_1 is made visible.
 function Window1_1_OpeningFcn(hObject, eventdata, handles, varargin)
+
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -100,7 +101,7 @@ end
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
 n1=get(handles.edit1,'String');
-n2=get(handles.edit1,'String');
+
 global ns;
 ns=str2double(n1)
 
@@ -109,7 +110,6 @@ ns=str2double(n1)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-setappdata(0,'ns',ns);
 
 Window1_1_1
 close Window1_1

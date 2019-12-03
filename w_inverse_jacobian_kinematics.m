@@ -75,11 +75,23 @@ varargout{1} = handles.output;
 
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
+global Td;
+global ns;
+global link_limits;
+global joint_type;
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 tabledata=(get(handles.uitable1,'data'));
-q0=tabledata(:,1);
-qd=tabledata(:,2);
+tabledata1=(get(handles.uitable2,'data'));
+link_limits=str2double(tabledata1(:,2))
+joint_type=string(tabledata1(:,1))
+q_0=tabledata(:,1)
+for i=1: length(q_0)
+    q0(i)=str2num(cell2mat(q_0(i)))
+end
+q0=(q0');
+qd=(cell2mat(tabledata(:,2)));
+qd=(qd')
 x=calculate_inverse_kinematics_jacobian(Td,ns,joint_type,link_limits,qd,q0);
 x

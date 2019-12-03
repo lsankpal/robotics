@@ -80,7 +80,6 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-setappdata(handles.pushbutton1, 'a', 1);
 Window1_1
 close Window_1
 
@@ -89,7 +88,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-setappdata(handles.pushbutton2, 'b', 2);
+
 window2
 close Window_1
 

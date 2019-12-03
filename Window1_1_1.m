@@ -105,11 +105,13 @@ a=tabledata(:,4);
 a1=str2num(cell2mat(a))
 Td=str2double(tabledata)
  %writetable(Td,'D:\MS RAS EE\Fall 2019\Mae 547 Modelling of robots\project\D_H_user.txt');
+ %{
  setappdata(Window1_1_1,'Td',Td);
  setappdata(Window1_1_1,'theta',theta);
  setappdata(Window1_1_1,'alpha',alpha);
  setappdata(Window1_1_1,'d',d1);
  setappdata(Window1_1_1,'a',a1);
+ %}
  topics_gui
  close Window1_1_1
 

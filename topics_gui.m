@@ -46,28 +46,18 @@ end
 
 % --- Executes just before topics_gui is made visible.
 function topics_gui_OpeningFcn(hObject, eventdata, handles, varargin)
-ns=getappdata(0,'ns');
-value1 = getappdata(handles.pushbutton1, 'a')
-value2 = getappdata(handles.pushbutton2, 'b')
-if (value1==1)
-    ns=getappdata(0,'ns')
-    theta=getappdata(Window1_1_1,'theta')
-    d=getappdata(Window1_1_1,'d')
-    alpha=getappdata(Window1_1_1,'alpha')
-    a=getappdata(Window1_1_1,'a')
-    TD=getappdata(Window1_1_1,'Td')
-else if (value2==2)
-    TD=getappdata(newWindow2_1,'Td')
-    end
-end
-%T_d=(cell2mat(Td))
-Joint_angle=getappdata(newWindow2_1,'joint_type');
-link_limits=getappdata(newWindow2_1,'link_limits');
-% This function has no output args, see OutputFcn.
-% hObject    handle to figure
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to topics_gui (see VARARGIN)
+global joint_type;
+global Z_angle;
+global link_length;
+global Td;
+global ns;
+global nl;
+     
+    % This function has no output args, see OutputFcn.
+    % hObject    handle to figure
+    % eventdata  reserved - to be defined in a future version of MATLAB
+    % handles    structure with handles and user data (see GUIDATA)
+    % varargin   command line arguments to topics_gui (see VARARGIN)
 
 % Choose default command line output for topics_gui
 handles.output = hObject;
@@ -95,7 +85,12 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+global Td;
+global ns;
+theta=Td(:,1);
+d=Td(:,2);
+alpha=Td(:,3);
+a=Td(:,4);
 Tr=transformation_matrix(ns,theta,alpha,d,a)
 
 % --- Executes on button press in pushbutton2.
@@ -129,10 +124,14 @@ thetas = calculate_inv_kinematics(Td,ns,"T_matrix")
 
 % --- Executes on button press in pushbutton6.
 function pushbutton6_Callback(hObject, eventdata, handles)
+global Td;
+global ns;
+global joint_type;
+global link_limits
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-qcomp = calculate_differential_kinematics(DH_params,n_links,link_type,link_limits,q)
+qcomp = calculate_differential_kinematics(Td,ns,joint_type,link_limits,q)
 
 % --- Executes on button press in pushbutton7.
 function pushbutton7_Callback(hObject, eventdata, handles)

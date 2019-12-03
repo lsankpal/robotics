@@ -71,6 +71,7 @@ function varargout = newWindow2_1_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
+global nl;
 nl=getappdata(window2,'nl');
 %n_s=getappdata(0,'ns');
 set(handles.uitable1,'Data',cell(nl,4));
@@ -99,7 +100,8 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 global joint_type;
 global Z_angle;
 global link_length;
-global ns
+global Td;
+global ns;
 %global link_limits;
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -116,11 +118,11 @@ link_length=Link_parameters(:,2)
 link_length=cell2mat(link_length)
 %link_limits=Link_parameters(:,3)
 %Link_limits=(cell2mat(link_limits))
-setappdata(newWindow2_1,'joint_type',joint_type);
+%setappdata(newWindow2_1,'joint_type',joint_type);
 %setappdata(newWindow2_1,'link_limits',Link_limits);
  
 Td=calculate_dhparam(ns,Z_angle,link_length, joint_type)
-setappdata(newWindow2_1,'Td',Td);
+%setappdata(newWindow2_1,'Td',Td);
 topics_gui
 
 

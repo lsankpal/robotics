@@ -46,19 +46,15 @@ end
 
 % --- Executes just before topics_gui is made visible.
 function topics_gui_OpeningFcn(hObject, eventdata, handles, varargin)
-ns=getappdata(0,'ns')
-global var
-%var = getappdata(Window_1,'var')
-if handles.b1==1
-    ns=getappdata(0,'ns')
+    %ns=getappdata(0,'ns')
+    %{
     theta=getappdata(Window1_1_1,'theta')
     d=getappdata(Window1_1_1,'d')
     alpha=getappdata(Window1_1_1,'alpha')
     a=getappdata(Window1_1_1,'a')
-    TD=getappdata(Window1_1_1,'Td')
-else 
-    TD=getappdata(newWindow2_1,'Td')
-end
+    %}
+
+
 %T_d=(cell2mat(Td))
 Joint_angle=getappdata(newWindow2_1,'joint_type');
 link_limits=getappdata(newWindow2_1,'link_limits');
@@ -73,6 +69,7 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
+end
 
 % UIWAIT makes topics_gui wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
