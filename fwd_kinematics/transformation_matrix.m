@@ -1,8 +1,8 @@
-function Tr = transformation_matrix(ns,Theta,alpha,d,a)
+function T = transformation_matrix(ns,Theta,alpha,d,a)
 disp(ns)
 for i=1:ns
 
-    T = eye(4)
+    T = eye(4);
 
     % ROTATION FOR X
     T(1,1) = cosd((Theta(i)));
@@ -21,13 +21,14 @@ for i=1:ns
     T(3,3) = (cosd(alpha(i)));
     T(4,3)=0;
 
-    % TRANSLATION VECTOR
+    % TRANSLATION VECTORns 
     T(1,4) = (a(i))*(cosd(Theta(i)));
     T(2,4) = (a(i))*(sind(Theta(i)));
     T(3,4) = d(i);
     T(4,4)=0;
-    Tr{i}=T
+
     disp('h')
 
 end
+
 end
