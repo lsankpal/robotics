@@ -46,12 +46,20 @@ end
 
 % --- Executes just before topics_gui is made visible.
 function topics_gui_OpeningFcn(hObject, eventdata, handles, varargin)
-n_s=getappdata(0,'ns')
-theta=getappdata(Window1_1_1,'theta')
-d=getappdata(Window1_1_1,'d')
-alpha=getappdata(Window1_1_1,'alpha')
-a=getappdata(Window1_1_1,'a')
-Td=getappdata(Window1_1_1,'Td')
+ns=getappdata(0,'ns');
+value1 = getappdata(handles.pushbutton1, 'a')
+value2 = getappdata(handles.pushbutton2, 'b')
+if (value1==1)
+    ns=getappdata(0,'ns')
+    theta=getappdata(Window1_1_1,'theta')
+    d=getappdata(Window1_1_1,'d')
+    alpha=getappdata(Window1_1_1,'alpha')
+    a=getappdata(Window1_1_1,'a')
+    TD=getappdata(Window1_1_1,'Td')
+else if (value2==2)
+    TD=getappdata(newWindow2_1,'Td')
+    end
+end
 %T_d=(cell2mat(Td))
 Joint_angle=getappdata(newWindow2_1,'joint_type');
 link_limits=getappdata(newWindow2_1,'link_limits');
@@ -88,7 +96,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-Tr=transformation_matrix(n_s,theta,alpha,d,a)
+Tr=transformation_matrix(ns,theta,alpha,d,a)
 
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
@@ -117,14 +125,14 @@ function pushbutton5_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+thetas = calculate_inv_kinematics(Td,ns,"T_matrix")
 
 % --- Executes on button press in pushbutton6.
 function pushbutton6_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+qcomp = calculate_differential_kinematics(DH_params,n_links,link_type,link_limits,q)
 
 % --- Executes on button press in pushbutton7.
 function pushbutton7_Callback(hObject, eventdata, handles)
