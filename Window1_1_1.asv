@@ -98,10 +98,13 @@ tabledata=(get(handles.uitable2,'data'));
 theta=tabledata(:,1);
 theta = str2double(theta);
 d=tabledata(:,2);
+%d1=str2num(cell2mat(d))
 d = str2double(d);
 alpha=tabledata(:,3);
+%alpha=str2num(cell2mat(alpha))
 alpha = str2double(alpha);
 a=tabledata(:,4);
+%a1=str2num(cell2mat(a))
 a = str2double(a);
 class(a)
 Td=str2double(tabledata);
