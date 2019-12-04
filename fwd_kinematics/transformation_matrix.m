@@ -1,7 +1,13 @@
-function T = transformation_matrix(ns,Theta,alpha,d,a)
-disp(ns)
-for i=1:ns
 
+%function T = transformation_matrix(ns,Theta,alpha,d,a)
+ns= 3;
+Theta = [90 90 90];
+d=[1 2  3];
+a=[1 2 3];
+alpha = [0 0 0];
+euler_angles(ns, Theta, alpha,d,a)
+for i=1:ns
+    
     T = eye(4);
 
     % ROTATION FOR X
@@ -31,4 +37,4 @@ for i=1:ns
 
 end
 
-end
+%end
