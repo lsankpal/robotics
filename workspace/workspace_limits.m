@@ -57,8 +57,8 @@ handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
-global nl;
-set(handles.uitable1,'Data',cell(nl,2));
+global ns;
+set(handles.uitable1,'Data',cell(ns,2));
 set(handles.uitable1, 'ColumnEditable', [true, true,]);
 
 % UIWAIT makes workspace_limits wait for user response (see UIRESUME)
@@ -79,10 +79,10 @@ varargout{1} = handles.output;
 % --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
 tabledata=(get(handles.uitable1,'data'));
-global dmax;
-global dmin;
-dmax=cell2mat(tabledata(:,1))
-dmin=cell2mat(tabledata(:,1))
+global ML;
+global ml;
+ML=cell2mat(tabledata(:,1))
+ml=cell2mat(tabledata(:,1))
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)

@@ -1,8 +1,8 @@
 function workspace(R,lim)
 
 
-[A,N] = size(R.a);
-qin = zeros(1,N);
+[A,ns] = size(R);
+qin = zeros(1,ns);
 
 
 for i = 1:N

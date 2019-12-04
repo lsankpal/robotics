@@ -2,6 +2,7 @@ function T_F =forwardkine(theta,d,alpha,a)
 global ns;
 global T_F;
 global Td;
+global R;
 
 %{
 prompt='enter the number of links  ';

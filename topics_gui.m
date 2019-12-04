@@ -132,10 +132,24 @@ a=Td(:,4);
 
 % --- Executes on button press in pushbutton4.
 function pushbutton4_Callback(hObject, eventdata, handles)
+workspace_limits
+global Td
+global ns
+global T_F;
+global ML;
+global ml;
+global lim;
+lim=[ML ml];
+global R;
+theta=Td(:,1);
+d=Td(:,2);
+alpha=Td(:,3);
+a=Td(:,4);
 % hObject    handle to pushbutton4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-workspace_limits
+workspace(R,lim)
+
 
 
 % --- Executes on button press in pushbutton5.

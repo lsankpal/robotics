@@ -1,4 +1,4 @@
-function R(theta,d,alpha,a)
+function Ro=R(theta,d,alpha,a)
 
 prompt='enter the number of links  ';
 N = input(prompt);
