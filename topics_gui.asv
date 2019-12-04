@@ -118,12 +118,11 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 global Td
 global ns
 global T_F;
-theta=Td(:,1);
-d=Td(:,2);
-alpha=Td(:,3);
-a=Td(:,4);
+theta=Td(:,1)
+d=Td(:,2)
+alpha=Td(:,3)
+a=Td(:,4)
 [T_F]=forwardkine(theta,d,alpha,a)
-
 
 % hObject    handle to pushbutton3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
