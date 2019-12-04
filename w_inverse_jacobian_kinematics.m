@@ -92,7 +92,7 @@ qd=cell2mat(tabledata(1:3,2));
 link_limits=str2double(tabledata1(:,2));
 joint_type=string(tabledata1(:,1));
 
-joint_params=calculate_inverse_kinematics_jacobian(Td,ns,joint_type,link_limits,qd,q0);
+joint_params=calculate_inverse_kinematics_jacobian(Td,ns,joint_type,link_limits,qd',q0');
 finalOutput = joint_params;
 w_output_efg
 

@@ -10,5 +10,5 @@ end
 R=SerialLink(links);
 Td=R.fkine([qd]);
 masking=[1 1 1 0 0 0]';
-qcomp=rad2deg(R.ikine(Td,q0,masking,'pinv'));
+qcomp=rad2deg(R.ikine(Td,q0,'mask',masking,'pinv'));
 end

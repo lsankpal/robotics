@@ -91,11 +91,10 @@ tabledata1=(get(handles.uitable2,'data'));
 
 q0=cell2mat(tabledata(1:3,1))
 qd=cell2mat(tabledata(1:3,2))
-
 link_limits=str2double(tabledata1(:,2))
 joint_type=string(tabledata1(:,1))
 
-[qcomp,tcomp]=calculate_inverse_differential_kinematics(Td,q0,qd,ns,joint_type,link_limits);
+[qcomp,tcomp]=calculate_inverse_differential_kinematics(Td,q0',qd',ns,joint_type,link_limits);
 finalOutput = qcomp;
 w_output_efg
 qcomp
