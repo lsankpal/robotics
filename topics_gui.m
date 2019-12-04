@@ -139,10 +139,17 @@ workspace_limits
 
 % --- Executes on button press in pushbutton5.
 function pushbutton5_Callback(hObject, eventdata, handles)
+global Td;
+global ns;
 % hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-thetas = calculate_inv_kinematics(Td,ns,"T_matrix")
+theta=Td(:,1);
+d=Td(:,2);
+alpha=Td(:,3);
+a=Td(:,4);
+t_matrix=tmatrix_for_inv(ns,theta,alpha,d,a);
+thetas = calculate_inv_kinematics(Td,ns,t_matrix)
 
 % --- Executes on button press in pushbutton6.
 function pushbutton6_Callback(hObject, eventdata, handles)
