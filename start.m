@@ -42,7 +42,7 @@ else
     gui_mainfcn(gui_State, varargin{:});
 end
 % End initialization code - DO NOT EDIT
-
+addpath(genpath(pwd));
 
 % --- Executes just before start is made visible.
 function start_OpeningFcn(hObject, eventdata, handles, varargin)
