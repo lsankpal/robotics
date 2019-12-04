@@ -82,7 +82,7 @@ tabledata=(get(handles.uitable1,'data'));
 global dmax;
 global dmin;
 dmax=cell2mat(tabledata(:,1))
-dmin=cell2mat(tabledata(:,1))
+dmin=c(tabledata(:,1))
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
