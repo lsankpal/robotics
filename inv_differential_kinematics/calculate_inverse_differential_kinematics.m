@@ -1,4 +1,4 @@
-function [qcomp,tcomp] = calculate_inverse_differential_kinematics(DH_params,q0,qd,n_links)
+function [qcomp,tcomp] = calculate_inverse_differential_kinematics(DH_params,q0,qd,n_links,link_type,link_limits)
 
 for i=1:n_links
     if link_type(i)=='PRISMATIC'
