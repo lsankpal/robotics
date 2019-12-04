@@ -47,8 +47,8 @@ end
 % --- Executes just before w_output_euler is made visible.
 function w_output_euler_OpeningFcn(hObject, eventdata, handles, varargin)
 close w_output1_1
-global Tr;
-set(handles.uitable2,'Data',Tr);
+global r;
+set(handles.uitable2,'Data',r);
 global eulZYX;
 set(handles.uitable1,'Data',eulZYX);
 % This function has no output args, see OutputFcn.
