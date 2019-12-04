@@ -26,7 +26,7 @@ for i=1:ns
     T(1,4) = (a(i))*(cosd(Theta(i)));
     T(2,4) = (a(i))*(sind(Theta(i)));
     T(3,4) = d(i);
-    T(4,4)=0;
+    T(4,4)=1;
 
 
 
