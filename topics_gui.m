@@ -141,6 +141,7 @@ workspace_limits
 function pushbutton5_Callback(hObject, eventdata, handles)
 global Td;
 global ns;
+global finalOutput;
 % hObject    handle to pushbutton5 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -149,25 +150,23 @@ d=Td(:,2);
 alpha=Td(:,3);
 a=Td(:,4);
 t_matrix=tmatrix_for_inv(ns,theta,alpha,d,a);
-thetas = calculate_inv_kinematics(Td,ns,t_matrix)
+joint_params = calculate_inv_kinematics(Td,ns,t_matrix)
+finalOutput = joint_params;
+w_output_efg
 
 % --- Executes on button press in pushbutton6.
 function pushbutton6_Callback(hObject, eventdata, handles)
-global Td;
-global ns;
-global joint_type;
-global link_limits
 % hObject    handle to pushbutton6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-qcomp = calculate_differential_kinematics(Td,ns,joint_type,link_limits,q)
+W_differential_kinematics
 
 % --- Executes on button press in pushbutton7.
 function pushbutton7_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton7 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+w_inv_differential_kinematics
 
 % --- Executes on button press in pushbutton8.
 function pushbutton8_Callback(hObject, eventdata, handles)
