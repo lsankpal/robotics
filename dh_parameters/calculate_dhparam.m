@@ -52,5 +52,6 @@ for i = 1:ns
         end
     end
 end
-Td
+global Td;
+Td;
 end

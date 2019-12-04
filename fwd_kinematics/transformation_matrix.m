@@ -31,5 +31,6 @@ for i=1:ns
 
 
 end
-
+T
+w_output1_1
 end

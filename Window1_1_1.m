@@ -103,7 +103,6 @@ alpha=tabledata(:,3);
 alpha = str2double(alpha);
 a=tabledata(:,4);
 a = str2double(a);
-class(a)
 Td=str2double(tabledata);
  %writetable(Td,'D:\MS RAS EE\Fall 2019\Mae 547 Modelling of robots\project\D_H_user.txt');
  %{

@@ -87,36 +87,43 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 global Td;
 global ns;
+global Tr
 theta=Td(:,1);
 d=Td(:,2);
 alpha=Td(:,3);
 a=Td(:,4);
-Tr=transformation_matrix(ns,theta,alpha,d,a)
+Tr=transformation_matrix(ns,theta,alpha,d,a);
+w_output1_1
 
 % --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
 global Td
 global ns;
-Td
-theta=Td(:,1)
-d=Td(:,2)
-alpha=Td(:,3)
-a=Td(:,4)
+global Tr;
+global eulZYX;
+theta=Td(:,1);
+d=Td(:,2);
+alpha=Td(:,3);
+a=Td(:,4);
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 [eulZYX, Tr] =euler_angles(ns, theta, alpha, d, a)
+w_output_euler
+
 
 
 % --- Executes on button press in pushbutton3.
 function pushbutton3_Callback(hObject, eventdata, handles)
 global Td;
 global ns;
+global Tr
 theta=Td(:,1);
 d=Td(:,2);
 alpha=Td(:,3);
 a=Td(:,4);
 Tr=transformation_matrix(ns,theta,alpha,d,a)
+w_output1_1
 % hObject    handle to pushbutton3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)

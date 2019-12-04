@@ -107,21 +107,21 @@ global ns;
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-Joint_parameters=(get(handles.uitable1,'data'))
-joint_type=Joint_parameters(:,2)
-joint_type=string(joint_type)
+Joint_parameters=(get(handles.uitable1,'data'));
+joint_type=Joint_parameters(:,2);
+joint_type=string(joint_type);
 z_e = str2num(get(handles.edit1,'String'));
-Z_angle=Joint_parameters(:,3)
-Z_angle=[cell2mat(Z_angle);z_e]
-Link_parameters=(get(handles.uitable2,'data'))
-link_length=Link_parameters(:,2)
-link_length=cell2mat(link_length)
+Z_angle=Joint_parameters(:,3);
+Z_angle=[cell2mat(Z_angle);z_e];
+Link_parameters=(get(handles.uitable2,'data'));
+link_length=Link_parameters(:,2);
+link_length=cell2mat(link_length);
 %link_limits=Link_parameters(:,3)
 %Link_limits=(cell2mat(link_limits))
 %setappdata(newWindow2_1,'joint_type',joint_type);
 %setappdata(newWindow2_1,'link_limits',Link_limits);
  
-Td=calculate_dhparam(ns,Z_angle,link_length, joint_type)
+Td=calculate_dhparam(ns,Z_angle,link_length, joint_type);
 %setappdata(newWindow2_1,'Td',Td);
 topics_gui
 
