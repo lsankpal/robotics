@@ -1,11 +1,6 @@
 
-%function T = transformation_matrix(ns,Theta,alpha,d,a)
-ns= 3;
-Theta = [90 90 90];
-d=[1 2  3];
-a=[1 2 3];
-alpha = [0 0 0];
-euler_angles(ns, Theta, alpha,d,a)
+function T = transformation_matrix(ns,Theta,alpha,d,a)
+
 for i=1:ns
     
     T = eye(4);
@@ -37,4 +32,4 @@ for i=1:ns
 
 end
 
-%end
+end
